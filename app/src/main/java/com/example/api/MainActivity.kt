@@ -3,6 +3,7 @@ package com.example.api
 import android.os.Bundle
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -53,7 +54,11 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<MyData?>, t: Throwable) {
                 // if api call fails
+                Toast.makeText(this@MainActivity, "Failed to get the data", Toast.LENGTH_SHORT).show()
+
                 Log.d("Main Activity", "onFailure" + t.message)
+
+
             }
 
         })
